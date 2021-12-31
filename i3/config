@@ -66,11 +66,7 @@ exec picom
 exec nitrogen --restore
 
 # Python Scipts
-exec python3 ./.config/i3/alternating_layouts.py
-
-exec echo "SUDOPASSWORD" | sudo -S python3 ~/.config/i3/floating.py
-
-exec echo "SUDOPASSWORD" | sudo -S python3 ~/.config/i3/hidebar.py
+exec ~/.config/i3/scripts.sh
 
 # Configuring i3
 gaps inner 25
