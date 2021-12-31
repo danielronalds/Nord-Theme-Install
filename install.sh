@@ -16,10 +16,7 @@ pip3 install i3ipc
 pip3 install keyboard
 
 echo "[ Ricing ] Installing fonts"
-FontsDir = "$HOME/.local/share/fonts"
-if [[ -d "$FontsDir"]]; then
-	mkdir -p "$FontsDir"
-fi
+mkdir -p "$FontsDir"
 cp -rf ./fonts $HOME/.local/share/fonts
 
 echo "[ Ricing ] Writing i3 python script"
