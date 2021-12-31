@@ -14,6 +14,8 @@ echo "[ Setup ] Installing required packages"
 sudo apt install fish i3-gaps polybar picom rofi vim python3 python3-pip git nitrogen alacritty feh
 pip3 install i3ipc
 pip3 install keyboard
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "[ Shell Managament ] Changing shell to fish"
 echo $sudopassword | chsh -s /usr/bin/fish

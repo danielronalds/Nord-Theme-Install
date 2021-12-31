@@ -63,7 +63,7 @@ exec bash ~/.config/polybar/launch.sh --material
 exec picom
 
 # Launching Feh
-exec feh --bg-scale ./nord_background.png
+exec feh --bg-scale ~/.config/i3/nord_background.png
 
 # Python Scipts
 exec ~/.config/i3/scripts.sh
