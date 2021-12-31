@@ -32,6 +32,8 @@ echo "python3 ./.config/i3/alternating_layouts.py &" >> ./i3/scripts.sh
 echo "sudo python3 ~/.config/i3/floating.py &" >> ./i3/scripts.sh
 echo "sudo python3 ~/.config/i3/hidebar.py &" >> ./i3/scripts.sh
 
+chmod +x ./i3/scripts.sh
+
 echo "[ Ricing ] Moving config files"
 
 mkdir $HOME/.config
@@ -59,3 +61,7 @@ cp -r ./.alacritty.yml $HOME/.alacritty.yml
 # Vim
 rm -rf $HOME/.vimr
 cp -r ./.vimrc $HOME/.vimrc
+
+echo "[ Ricing ] Updating vim plugins"
+
+vim -c PlugUpdate &&
