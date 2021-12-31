@@ -32,24 +32,24 @@ mkdir $HOME/.config
 
 # Fish
 rm -rf $HOME/.config/fish
-cp ./fish $HOME/.config/fish
+cp -r ./fish $HOME/.config/fish
 
 # i3
 rm -rf $HOME/.config/i3
-cp ./i3 $HOME/.config/i3
+cp -r ./i3 $HOME/.config/i3
 
 # rofi
 rm -rf $HOME/.config/rofi
-cp ./rofi $HOME/.config/rofi
+cp -r ./rofi $HOME/.config/rofi
 
 # Polybar
 rm -rf $HOME/.config/polybar
-cp ./polybar $HOME/.config/polybar
+cp -r ./polybar $HOME/.config/polybar
 
 # alacritty
 rm -rf $HOME/.alacritty.yml
-cp ./.alacritty.yml $HOME/.alacritty.yml
+cp -r ./.alacritty.yml $HOME/.alacritty.yml
 
 # Vim
 rm -rf $HOME/.vimr
-cp ./.vimrc $HOME/.vimrc
+cp -r ./.vimrc $HOME/.vimrc
