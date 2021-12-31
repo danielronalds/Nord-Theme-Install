@@ -16,7 +16,7 @@ pip3 install i3ipc
 pip3 install keyboard
 
 echo "[ Ricing ] Installing fonts"
-mkdir -p "$FontsDir"
+mkdir -p $HOME/.local/share/fonts
 cp -rf ./fonts $HOME/.local/share/fonts
 
 echo "[ Ricing ] Writing i3 python script"
@@ -27,6 +27,8 @@ echo "echo \$SudoPassword | sudo -S python3 ~/.config/i3/floating.py" >> ./i3/sc
 echo "echo \$SudoPassword | sudo -S python3 ~/.config/i3/hidebar.py" >> ./i3/scripts.sh
 
 echo "[ Ricing ] Moving config files"
+
+mkdir $HOME/.config
 
 # Fish
 rm -rf $HOME/.config/fish
