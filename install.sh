@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "This script requires a sudo password"
+echo "[ Setup ] This script requires a sudo password"
 read -p "> " sudopassword
 
 echo $sudopassword | sudo -S echo ""
@@ -14,6 +14,9 @@ echo "[ Setup ] Installing required packages"
 sudo apt install fish i3-gaps polybar picom rofi vim python3 python3-pip git nitrogen alacritty
 pip3 install i3ipc
 pip3 install keyboard
+
+echo "[ Shell Managament ] Changing shell to fish"
+chsh -s /usr/bin/fish
 
 echo "[ Ricing ] Installing fonts"
 mkdir -p $HOME/.local/share/fonts
