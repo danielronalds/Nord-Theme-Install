@@ -62,8 +62,8 @@ exec bash ~/.config/polybar/launch.sh --material
 # Launching Picom
 exec picom
 
-# Launching Nitrogen
-exec nitrogen --restore
+# Launching Feh
+exec feh --bg-scale ./nord_background.png
 
 # Python Scipts
 exec ~/.config/i3/scripts.sh

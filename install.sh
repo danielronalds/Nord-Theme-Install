@@ -11,12 +11,12 @@ sudo add-apt-repository ppa:aslatter/ppa
 sudo apt update
 
 echo "[ Setup ] Installing required packages"
-sudo apt install fish i3-gaps polybar picom rofi vim python3 python3-pip git nitrogen alacritty
+sudo apt install fish i3-gaps polybar picom rofi vim python3 python3-pip git nitrogen alacritty feh
 pip3 install i3ipc
 pip3 install keyboard
 
 echo "[ Shell Managament ] Changing shell to fish"
-chsh -s /usr/bin/fish
+echo $sudopassword | chsh -s /usr/bin/fish
 
 echo "[ Ricing ] Installing fonts"
 mkdir -p $HOME/.local/share/fonts
@@ -24,10 +24,11 @@ cp -rf ./fonts $HOME/.local/share/fonts
 
 echo "[ Ricing ] Writing i3 python script"
 echo "#!/bin/bash" > ./i3/scripts.sh
-echo "SudoPassword = '$sudopassword'">> ./i3/scripts.sh
-echo "python3 ./.config/i3/alternating_layouts.py" >> ./i3/scripts.sh
-echo "echo \$SudoPassword | sudo -S python3 ~/.config/i3/floating.py" >> ./i3/scripts.sh
-echo "echo \$SudoPassword | sudo -S python3 ~/.config/i3/hidebar.py" >> ./i3/scripts.sh
+echo "SudoPassword=$sudopassword">> ./i3/scripts.sh
+echo "echo \$SudoPassword | echo """ >> ./i3/scripts.sh
+echo "python3 ./.config/i3/alternating_layouts.py &" >> ./i3/scripts.sh
+echo "sudo python3 ~/.config/i3/floating.py &" >> ./i3/scripts.sh
+echo "sudo python3 ~/.config/i3/hidebar.py &" >> ./i3/scripts.sh
 
 echo "[ Ricing ] Moving config files"
 
