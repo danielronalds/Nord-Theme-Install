@@ -36,7 +36,7 @@ chmod +x ./i3/scripts.sh
 
 echo "[ Ricing ] Moving config files"
 
-[ -d "$HOME/.config" ] && rmkdir $HOME/.config
+[ -d "$HOME/.config" ] && mkdir $HOME/.config
 
 # Fish
 [ -d "$HOME/.config/fish" ] && rm -rf $HOME/.config/fish
