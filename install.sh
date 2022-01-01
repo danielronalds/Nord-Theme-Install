@@ -36,32 +36,29 @@ chmod +x ./i3/scripts.sh
 
 echo "[ Ricing ] Moving config files"
 
-mkdir $HOME/.config
+[ -d "$HOME/.config" ] && rmkdir $HOME/.config
 
 # Fish
-rm -rf $HOME/.config/fish
+[ -d "$HOME/.config/fish" ] && rm -rf $HOME/.config/fish
 cp -r ./fish $HOME/.config/fish
 
 # i3
-rm -rf $HOME/.config/i3
+[ -d "$HOME/.config/i3" ] && rm -rf $HOME/.config/i3
 cp -r ./i3 $HOME/.config/i3
 
 # rofi
-rm -rf $HOME/.config/rofi
+[ -d "$HOME/.config/rofi" ] && rm -rf $HOME/.config/rofi
 cp -r ./rofi $HOME/.config/rofi
 
 # Polybar
-rm -rf $HOME/.config/polybar
+[ -d "$HOME/.config/polybar" ] && rm -rf $HOME/.config/polybar
 cp -r ./polybar $HOME/.config/polybar
 
 # alacritty
-rm -rf $HOME/.alacritty.yml
+[ -d "$HOME/.alacritty.yml" ] && rm -rf $HOME/.alacritty.yml
 cp -r ./.alacritty.yml $HOME/.alacritty.yml
 
 # Vim
-rm -rf $HOME/.vimr
+[ -d "$HOME/.vimr" ] && rm -rf $HOME/.vimr
 cp -r ./.vimrc $HOME/.vimrc
 
-echo "[ Ricing ] Updating vim plugins"
-
-vim -c PlugUpdate &&
