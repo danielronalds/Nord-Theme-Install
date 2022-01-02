@@ -7,11 +7,12 @@ echo $sudopassword | sudo -S echo ""
 
 echo "[ Setup ] Adding needed ppas"
 sudo add-apt-repository -y ppa:kgilmer/speed-ricer
+sudo add-apt-repository ppa:papirus/papirus
 sudo add-apt-repository ppa:aslatter/ppa
 sudo apt update
 
 echo "[ Setup ] Installing required packages"
-sudo apt install fish i3-gaps polybar picom rofi vim python3 python3-pip git nitrogen alacritty feh
+sudo apt install fish i3-gaps polybar picom rofi vim python3 python3-pip nitrogen alacritty feh lxappearance git papirus-icon-theme
 pip3 install i3ipc
 pip3 install keyboard
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -33,6 +34,10 @@ echo "sudo python3 ~/.config/i3/floating.py &" >> ./i3/scripts.sh
 echo "sudo python3 ~/.config/i3/hidebar.py &" >> ./i3/scripts.sh
 
 chmod +x ./i3/scripts.sh
+
+echo "[ Ricing ] Installing GTK theme"
+mkdir $HOME/.themes
+cp -r ./Nordic-darker-v40 $HOME/.themes/Nordic-darker-v40
 
 echo "[ Ricing ] Moving config files"
 
@@ -62,3 +67,6 @@ cp -r ./.alacritty.yml $HOME/.alacritty.yml
 [ -d "$HOME/.vimr" ] && rm -rf $HOME/.vimr
 cp -r ./.vimrc $HOME/.vimrc
 
+vim -c PlugUpdate &
+
+echo "Script Completed"
