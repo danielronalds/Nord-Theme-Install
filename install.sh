@@ -12,11 +12,12 @@ sudo add-apt-repository ppa:aslatter/ppa
 sudo apt update
 
 echo "[ Setup ] Installing required packages"
-sudo apt install fish i3-gaps polybar picom rofi vim python3 python3-pip nitrogen alacritty feh lxappearance git papirus-icon-theme
+sudo apt install fish i3-gaps polybar picom rofi vim python3 python3-pip nitrogen alacritty feh lxappearance git papirus-icon-theme suckless-tools
 pip3 install i3ipc
 pip3 install keyboard
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+sudo cp networkmanager_dmenu /usr/bin/networkmanager_dmenu
 
 echo "[ Shell Managament ] Changing shell to fish"
 echo $sudopassword | chsh -s /usr/bin/fish
@@ -67,6 +68,6 @@ cp -r ./.alacritty.yml $HOME/.alacritty.yml
 [ -d "$HOME/.vimr" ] && rm -rf $HOME/.vimr
 cp -r ./.vimrc $HOME/.vimrc
 
-vim -c PlugUpdate &
+vim -c PlugUpdate 
 
 echo "Script Completed"
