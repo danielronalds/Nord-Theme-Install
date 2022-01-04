@@ -17,7 +17,7 @@ pip3 install i3ipc
 pip3 install keyboard
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-sudo cp networkmanager_dmenu /usr/bin/networkmanager_dmenu
+sudo cp ./networkmanager_dmenu /usr/bin/networkmanager_dmenu
 
 echo "[ Shell Managament ] Changing shell to fish"
 echo $sudopassword | chsh -s /usr/bin/fish
