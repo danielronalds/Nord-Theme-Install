@@ -1,4 +1,14 @@
 #!/bin/bash
+#   ____   _____  _____  _____  _____  __     _____  _____  _____  _____  __     ____   _____ 
+#  |    \ |  _  ||   | ||     ||   __||  |   | __  ||     ||   | ||  _  ||  |   |    \ |   __|
+#  |  |  ||     || | | ||-   -||   __||  |__ |    -||  |  || | | ||     ||  |__ |  |  ||__   |
+#  |____/ |__|__||_|___||_____||_____||_____||__|__||_____||_|___||__|__||_____||____/ |_____|
+#  
+#  github: https://github.com/danielronalds                                                   
+#  
+#  Install script for Nord i3 rice 
+#  
+
 
 echo "[ Setup ] This script requires a sudo password"
 read -p "> " sudopassword
@@ -12,12 +22,11 @@ sudo add-apt-repository ppa:aslatter/ppa
 sudo apt update
 
 echo "[ Setup ] Installing required packages"
-sudo apt install fish i3-gaps polybar picom rofi vim python3 python3-pip nitrogen alacritty feh lxappearance git papirus-icon-theme suckless-tools
+sudo apt install fish i3-gaps polybar picom rofi vim python3 python3-pip nitrogen alacritty feh lxappearance git papirus-icon-theme suckless-tools neofetch htop
 pip3 install i3ipc
 pip3 install keyboard
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-sudo cp ./networkmanager_dmenu /usr/bin/networkmanager_dmenu
 
 echo "[ Shell Managament ] Changing shell to fish"
 echo $sudopassword | chsh -s /usr/bin/fish
@@ -30,7 +39,7 @@ echo "[ Ricing ] Writing i3 python script"
 echo "#!/bin/bash" > ./i3/scripts.sh
 echo "SudoPassword=$sudopassword">> ./i3/scripts.sh
 echo "echo \$SudoPassword | echo """ >> ./i3/scripts.sh
-echo "python3 ./.config/i3/alternating_layouts.py &" >> ./i3/scripts.sh
+echo "sudo python3 ~/.config/i3/autotiling.py &" >> ./i3/scripts.sh
 echo "sudo python3 ~/.config/i3/floating.py &" >> ./i3/scripts.sh
 echo "sudo python3 ~/.config/i3/hidebar.py &" >> ./i3/scripts.sh
 

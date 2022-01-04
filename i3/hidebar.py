@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
-
-# Toggles the bar for managing wifi connections easily
+#   ____   _____  _____  _____  _____  __     _____  _____  _____  _____  __     ____   _____ 
+#  |    \ |  _  ||   | ||     ||   __||  |   | __  ||     ||   | ||  _  ||  |   |    \ |   __|
+#  |  |  ||     || | | ||-   -||   __||  |__ |    -||  |  || | | ||     ||  |__ |  |  ||__   |
+#  |____/ |__|__||_|___||_____||_____||_____||__|__||_____||_|___||__|__||_____||____/ |_____|
+#  
+#  github: https://github.com/danielronalds                                                   
+#  
+#  Toggles the bar for managing wifi connections easily
+#  
 
 from i3ipc import Connection, Event
 import keyboard
