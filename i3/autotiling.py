@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 #   ____   _____  _____  _____  _____  __     _____  _____  _____  _____  __     ____   _____ 
 #  |    \ |  _  ||   | ||     ||   __||  |   | __  ||     ||   | ||  _  ||  |   |    \ |   __|
@@ -18,9 +17,9 @@ def ToggleTiling():
     global tiling
     tiling = not tiling	
     if tiling:
-        message = "Auto tiling"
+        message = "Tiling Auto"
     else:
-        message = "Manual tiling"
+        message = "Tiling Manual"
     SendNotification(message)
 
 def SetTiling(i3, e):

@@ -22,7 +22,7 @@ sudo add-apt-repository ppa:aslatter/ppa
 sudo apt update
 
 echo "[ Setup ] Installing required packages"
-sudo apt install fish i3-gaps polybar picom rofi vim python3 python3-pip nitrogen alacritty feh lxappearance git papirus-icon-theme suckless-tools neofetch htop
+sudo apt install fish i3-gaps polybar picom rofi vim python3 python3-pip alacritty feh lxappearance git papirus-icon-theme suckless-tools neofetch htop
 pip3 install i3ipc
 pip3 install keyboard
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \

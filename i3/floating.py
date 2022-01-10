@@ -1,25 +1,31 @@
 #!/usr/bin/env python3
-#   ____   _____  _____  _____  _____  __     _____  _____  _____  _____  __     ____   _____ 
-#  |    \ |  _  ||   | ||     ||   __||  |   | __  ||     ||   | ||  _  ||  |   |    \ |   __|
-#  |  |  ||     || | | ||-   -||   __||  |__ |    -||  |  || | | ||     ||  |__ |  |  ||__   |
-#  |____/ |__|__||_|___||_____||_____||_____||__|__||_____||_|___||__|__||_____||____/ |_____|
-#  
-#  github: https://github.com/danielronalds                                                   
-#  
-#  Toggles floating mode for all new windows
-#
+
+# Toggles floating mode for all new windows
 
 from i3ipc import Connection, Event
 import keyboard
 import os
 
 def SetFloating(i3, e):
+    global floatingOnce
+    global floating
     if floating:
         i3.command('floating enable')
         if resize:
-	        i3.command('resize set 960 720')
+            i3.command('resize set 960 720')
+        if floatingOnce:
+            floatingOnce = False	
+            floating = False	
     else:
         i3.command('floating disable')
+
+def ToggleFloatingOnce():
+    global floatingOnce
+    global floating
+    floatingOnce = True	
+    floating = True	
+    message = "Floating once"
+    SendNotification(message)
 
 def ToggleFloating():
     global floating
@@ -43,11 +49,13 @@ def SendNotification(message):
 	notification = "notify-send -t 1500 " + message
 	os.system(notification)
 
+floatingOnce = False 
 floating = False 
 resize = False 
 
 i3 = Connection()
 i3.on(Event.WINDOW_NEW, SetFloating)
 keyboard.add_hotkey('ctrl+alt+f', lambda: ToggleFloating()) 
+keyboard.add_hotkey('ctrl+alt+shift+f', lambda: ToggleFloatingOnce()) 
 keyboard.add_hotkey('ctrl+alt+r', lambda: ToggleResize()) 
 i3.main()
