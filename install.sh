@@ -52,6 +52,7 @@ mkdir $HOME/.themes
 cp -r ./Nordic-darker-v40 $HOME/.themes/Nordic-darker-v40
 
 echo "[ Ricing ] Installing i3_python_extensions"
+sudo pip install i3ipc keyboard
 git clone https://github.com/danielronalds/i3_python_extensions.git
 mv ./i3_python_extensions/i3_python_extensions.py ./i3/i3_python_extensions.py
 echo "" >> ./i3/config
