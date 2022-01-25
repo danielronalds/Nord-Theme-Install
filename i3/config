@@ -68,7 +68,6 @@ exec picom
 exec feh --bg-scale ~/.config/i3/nord_background.png
 
 # Python Scipts
-exec ~/.config/i3/scripts.sh
 
 # Configuring i3
 gaps inner 25
