@@ -35,16 +35,6 @@ echo "[ Ricing ] Installing fonts"
 mkdir -p $HOME/.local/share/fonts
 cp -rf ./fonts $HOME/.local/share/fonts
 
-# Doesnt work figuring out new method
-# 
-#echo "[ Ricing ] Writing i3 python script"
-#echo "#!/bin/bash" > ./i3/scripts.sh
-#echo "SudoPassword=$sudopassword">> ./i3/scripts.sh
-#echo "echo \$SudoPassword | sudo -S echo """ >> ./i3/scripts.sh
-#echo "sudo python3 ~/.config/i3/autotiling.py &" >> ./i3/scripts.sh
-#echo "sudo python3 ~/.config/i3/floating.py &" >> ./i3/scripts.sh
-#echo "sudo python3 ~/.config/i3/hidebar.py &" >> ./i3/scripts.sh
-
 chmod +x ./i3/scripts.sh
 
 echo "[ Ricing ] Installing GTK theme"
@@ -57,7 +47,7 @@ git clone https://github.com/danielronalds/i3_python_extensions.git
 mv ./i3_python_extensions/i3_python_extensions.py ./i3/i3_python_extensions.py
 echo "" >> ./i3/config
 echo "# Python Scripts" >> ./i3/config
-echo "exec echo $sudopassword | sudo -S python3 ~/.config/i3/i3_python_extensions.py" >> ./i3/config
+echo "exec_always echo $sudopassword | sudo -S python3 ~/.config/i3/i3_python_extensions.py" >> ./i3/config
 
 echo "[ Ricing ] Moving config files"
 

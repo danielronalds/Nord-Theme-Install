@@ -59,13 +59,13 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Escape exec ~/.config/polybar/material/scripts/powermenu.sh 
 
 # Launching Polybar
-exec bash ~/.config/polybar/launch.sh --material
+exec_always bash ~/.config/polybar/launch.sh --material
 
 # Launching Picom
-exec picom
+exec_always picom
 
 # Launching Feh
-exec feh --bg-scale ~/.config/i3/nord_background.png
+exec_always feh --bg-scale ~/.config/i3/nord_background.png
 
 # Python Scipts
 
