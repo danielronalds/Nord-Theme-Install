@@ -18,11 +18,10 @@ echo $sudopassword | sudo -S echo ""
 echo "[ Setup ] Adding needed ppas"
 sudo add-apt-repository -y ppa:kgilmer/speed-ricer
 sudo add-apt-repository ppa:papirus/papirus
-sudo add-apt-repository ppa:aslatter/ppa
 sudo apt update
 
 echo "[ Setup ] Installing required packages"
-sudo apt install fish i3-gaps polybar picom rofi vim python3 python3-pip alacritty feh lxappearance git papirus-icon-theme suckless-tools neofetch htop
+sudo apt install fish i3-gaps polybar picom rofi vim python3 python3-pip kitty feh lxappearance git papirus-icon-theme suckless-tools neofetch htop fonts-jetbrain-mono
 pip3 install i3ipc
 pip3 install keyboard
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -69,9 +68,9 @@ cp -r ./rofi $HOME/.config/rofi
 [ -d "$HOME/.config/polybar" ] && rm -rf $HOME/.config/polybar
 cp -r ./polybar $HOME/.config/polybar
 
-# alacritty
-[ -d "$HOME/.alacritty.yml" ] && rm -rf $HOME/.alacritty.yml
-cp -r ./.alacritty.yml $HOME/.alacritty.yml
+# Kitty
+[ -d "$HOME/.config/kitty" ] && rm -rf $HOME/.config/kitty
+cp -r ./kitty $HOME/.config/kitty
 
 # Vim
 [ -d "$HOME/.vimr" ] && rm -rf $HOME/.vimr
